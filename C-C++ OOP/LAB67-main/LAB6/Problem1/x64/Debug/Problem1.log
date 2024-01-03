@@ -1,0 +1,8 @@
+﻿  Circle.cpp
+  main.cpp
+C:\Users\Alex\Desktop\LAB6\Problem1\main.cpp(15,25): warning C4305: 'argument': truncation from 'double' to 'float'
+  Shape.cpp
+  Square.cpp
+  Generating Code...
+  LINK : C:\Users\Alex\Desktop\LAB6\x64\Debug\Problem1.exe not found or not built by the last incremental link; performing full link
+  Problem1.vcxproj -> C:\Users\Alex\Desktop\LAB6\x64\Debug\Problem1.exe

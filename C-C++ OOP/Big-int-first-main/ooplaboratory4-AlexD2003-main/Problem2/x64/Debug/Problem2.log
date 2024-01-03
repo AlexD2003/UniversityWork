@@ -1,0 +1,8 @@
+﻿  BigInteger.cpp
+C:\Users\Alex\source\repos\L4 Nou\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(41,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  bigint_test.cpp
+C:\Users\Alex\source\repos\L4 Nou\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(41,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+C:\Users\Alex\source\repos\L4 Nou\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(41,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Problem2.vcxproj -> C:\Users\Alex\source\repos\L4 Nou\ooplaboratory4-AlexD2003-main\x64\Debug\Problem2.exe

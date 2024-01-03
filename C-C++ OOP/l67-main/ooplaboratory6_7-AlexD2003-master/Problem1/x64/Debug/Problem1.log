@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\Alex\source\repos\ooplaboratory6_7-AlexD2003-master\Problem1\main.cpp(15,25): warning C4305: 'argument': truncation from 'double' to 'float'
+  Problem1.vcxproj -> C:\Users\Alex\source\repos\ooplaboratory6_7-AlexD2003-master\x64\Debug\Problem1.exe

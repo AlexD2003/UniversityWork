@@ -1,0 +1,469 @@
+make the functions for ADTList (interface with TPozition=Iterator-IteratedList)– using a SLL  using #pragma once
+//DO NOT INCLUDE LISTITERATOR
+
+//DO NOT CHANGE THIS PART
+class ListIterator;
+#define NULL_TELEM -11111;
+typedef int TElem;
+
+class IteratedList {
+private:
+	//TODO - Representation
+
+
+	//DO NOT CHANGE THIS PART
+	friend class ListIterator;
+public:
+
+	// constructor
+	IteratedList ();
+
+	// returns the number of elements from the list
+	int size() const;
+
+	// verifies if the list is empty
+	bool isEmpty() const;
+
+	// returns the first position from the list
+	ListIterator first() const;
+
+	// returns the element from the given position
+	//throws an exception if the position is not valid
+	TElem getElement(ListIterator pos) const;
+
+	// changes the element from the current position to the given one.
+	//returns the old value from the position
+	//throws exception if the position is not valid
+	TElem setElement(ListIterator pos, TElem e);
+
+	// adds a new element to the end of the list
+	void addToEnd(TElem e);
+	
+	//adds a new element to the beginning of the list
+	void addToBeginning(TElem e);
+
+	// // adds a new element after the current element from the iterator
+	//after addition, pos points to the newly added element
+	//throws an exception if pos is not valid
+	void addToPosition(ListIterator& pos, TElem e);
+
+	// removes the element from position pos
+	//returns the removed element
+	//after removal pos is positioned on the next element (the one after the removed one) or it is invalid if the last element was removed
+	//throws an exception if pos is not valid
+	TElem remove(ListIterator& pos);
+
+	// searches for the first occurrance of an element 
+	//returns an iterator that points to the element, if it appear in the list, or an invalid iterator if the element is not in the list
+	ListIterator search(TElem e) const;
+
+	//destructor
+
+	~IteratedList();
+};
+ChatGPT
+Here's an implementation of the IteratedList class using a singly linked list:
+
+arduino
+Copy code
+#pragma once
+
+#include <stdexcept>
+
+class ListIterator;
+
+#define NULL_TELEM -11111;
+typedef int TElem;
+
+struct Node {
+    TElem data;
+    Node* next;
+};
+
+class IteratedList {
+private:
+    Node* head;
+    int length;
+
+public:
+    // constructor
+    IteratedList() {
+        head = nullptr;
+        length = 0;
+    }
+
+    // returns the number of elements from the list
+    int size() const {
+        return length;
+    }
+
+    // verifies if the list is empty
+    bool isEmpty() const {
+        return length == 0;
+    }
+
+    // returns the first position from the list
+    ListIterator first() const;
+
+    // returns the element from the given position
+    //throws an exception if the position is not valid
+    TElem getElement(ListIterator pos) const {
+        if (pos.isValid()) {
+            return pos.getCurrentNode()->data;
+        }
+        else {
+            throw std::runtime_error("Invalid iterator position");
+        }
+    }
+
+    // changes the element from the current position to the given one.
+    //returns the old value from the position
+    //throws exception if the position is not valid
+    TElem setElement(ListIterator pos, TElem e) {
+        if (pos.isValid()) {
+            Node* current = pos.getCurrentNode();
+            TElem oldData = current->data;
+            current->data = e;
+            return oldData;
+        }
+        else {
+            throw std::runtime_error("Invalid iterator position");
+        }
+    }
+
+    // adds a new element to the end of the list
+    void addToEnd(TElem e) {
+        Node* newNode = new Node{ e, nullptr };
+        if (head == nullptr) {
+            head = newNode;
+        }
+        else {
+            Node* current = head;
+            while (current->next != nullptr) {
+                current = current->next;
+            }
+            current->next = newNode;
+        }
+        length++;
+    }
+
+    //adds a new element to the beginning of the list
+    void addToBeginning(TElem e) {
+        Node* newNode = new Node{ e, head };
+        head = newNode;
+        length++;
+    }
+
+    // adds a new element after the current element from the iterator
+    //after addition, pos points to the newly added element
+    //throws an exception if pos is not valid
+    void addToPosition(ListIterator& pos, TElem e);
+
+    // removes the element from position pos
+    //returns the removed element
+    //after removal pos is positioned on the next element (the one after the removed one) or it is invalid if the last element was removed
+    //throws an exception if pos is not valid
+    TElem remove(ListIterator& pos);
+
+    // searches for the first occurrance of an element 
+    //returns an iterator that points to the element, if it appear in the list, or an invalid iterator if the element is not in the list
+    ListIterator search(TElem e) const;
+
+    //destructor
+    ~IteratedList() {
+        Node* current = head;
+        while (current != nullptr) {
+            Node* next = current->next;
+            delete current;
+            current = next;
+        }
+        length = 0;
+    }
+};
+Note that some functions such as ListIterator and addToPosition are not implemented here and will need to be defined separately.
+
+
+
+
+
+User
+complete the iterator and write the functions using this #pragma once
+#include "IteratedList.h"
+
+//DO NOT CHANGE THIS PART
+class IteratedList;
+typedef int TElem;
+
+class ListIterator{
+	friend class IteratedList;
+private:
+	//TODO - Representation 
+
+	//DO NOT CHANGE THIS PART
+	const IteratedList& list;
+	ListIterator(const IteratedList& lista);
+public:
+	void first();
+	void next();
+	bool valid() const;
+    TElem getCurrent() const;
+
+};
+
+
+ChatGPT
+
+2 / 2
+
+#pragma once
+#include "IteratedList.h"
+
+//DO NOT CHANGE THIS PART
+class IteratedList;
+typedef int TElem;
+
+class ListIterator {
+friend class IteratedList;
+private:
+//TODO - Representation
+Node* current;
+const IteratedList& list;
+
+scss
+Copy code
+ListIterator(const IteratedList& lista);
+public:
+void first();
+void next();
+bool valid() const;
+TElem getCurrent() const;
+};
+
+// Constructor for ListIterator class
+ListIterator::ListIterator(const Iterated
+
+
+
+
+
+User
+complete the iterator and make the functions using this #pragma once
+#include "IteratedList.h"
+
+//DO NOT CHANGE THIS PART
+class IteratedList;
+typedef int TElem;
+
+class ListIterator{
+	friend class IteratedList;
+private:
+	//TODO - Representation 
+
+	//DO NOT CHANGE THIS PART
+	const IteratedList& list;
+	ListIterator(const IteratedList& lista);
+public:
+	void first();
+	void next();
+	bool valid() const;
+    TElem getCurrent() const;
+
+};
+ChatGPT
+
+2 / 2
+
+#pragma once
+#include "IteratedList.h"
+
+//DO NOT CHANGE THIS PART
+class IteratedList;
+typedef int TElem;
+
+class ListIterator {
+friend class IteratedList;
+private:
+//TODO - Representation
+Node* current; // pointer to the current node
+const IteratedList& list; // reference to the list
+
+scss
+Copy code
+ListIterator(const IteratedList& lista); // private constructor
+public:
+// moves the iterator to the first position in the list
+void first();
+// moves the iterator to the next position in the list
+void next();
+// returns true if the iterator points to a valid position in the list, false otherwise
+bool valid() const;
+// returns the element from the current position of the iterator
+TElem getCurrent() const;
+};
+
+// Constructor for ListIterator class
+ListIterator::ListIterator(const IteratedList& lista) : list(lista), current(lista.head) {}
+
+// moves the iterator to the first position in the list
+void ListIterator::first() {
+current = list.head;
+}
+
+// moves the iterator to the next position in the list
+void ListIterator::next() {
+if (!valid()) {
+throw std::exception("Invalid iterator!");
+}
+current = current->next;
+}
+
+// returns true if the iterator points to a valid position in the list, false otherwise
+bool ListIterator::valid() const {
+return current != nullptr;
+}
+
+// returns the element from the current position of the iterator
+TElem ListIterator::getCurrent() const {
+if (!valid()) {
+throw std::exception("Invalid iterator!");
+}
+return current->data;
+}
+
+
+
+
+
+User
+make the get current node function
+ChatGPT
+To implement the getCurrentNode() function, we need to add a new public method to the ListIterator class. This method will simply return a pointer to the current node that the iterator is pointing to.
+
+Here's the updated code:
+
+arduino
+Copy code
+#pragma once
+#include "IteratedList.h"
+
+//DO NOT CHANGE THIS PART
+class IteratedList;
+typedef int TElem;
+
+class ListIterator {
+	friend class IteratedList;
+private:
+	//TODO - Representation 
+	Node* current; // pointer to the current node
+	const IteratedList& list; // reference to the list
+
+	ListIterator(const IteratedList& lista); // private constructor
+
+public:
+	// moves the iterator to the first position in the list
+	void first();
+	// moves the iterator to the next position in the list
+	void next();
+	// returns true if the iterator points to a valid position in the list, false otherwise
+	bool valid() const;
+	// returns the element from the current position of the iterator
+	TElem getCurrent() const;
+	// returns a pointer to the current node that the iterator is pointing to
+	Node* getCurrentNode() const;
+};
+
+// Constructor for ListIterator class
+ListIterator::ListIterator(const IteratedList& lista) : list(lista), current(lista.head) {}
+
+// moves the iterator to the first position in the list
+void ListIterator::first() {
+	current = list.head;
+}
+
+// moves the iterator to the next position in the list
+void ListIterator::next() {
+	if (!valid()) {
+		throw std::exception("Invalid iterator!");
+	}
+	current = current->next;
+}
+
+// returns true if the iterator points to a valid position in the list, false otherwise
+bool ListIterator::valid() const {
+	return current != nullptr;
+}
+
+// returns the element from the current position of the iterator
+TElem ListIterator::getCurrent() const {
+	if (!valid()) {
+		throw std::exception("Invalid iterator!");
+	}
+	return current->data;
+}
+
+// returns a pointer to the current node that the iterator is pointing to
+Node* ListIterator::getCurrentNode() const {
+	return current;
+}
+
+
+
+
+User
+make the remove function
+ChatGPT
+To implement the remove() function, we need to remove the node pointed to by the given ListIterator object and return its data. We also need to make sure that the iterator is updated to point to the next node in the list after the removed node.
+
+Here's the updated code for the remove() function:
+
+rust
+Copy code
+// removes the element from position pos
+// returns the removed element
+// after removal pos is positioned on the next element (the one after the removed one) or it is invalid if the last element was removed
+// throws an exception if pos is not valid
+TElem IteratedList::remove(ListIterator& pos) {
+	if (!pos.valid()) {
+		throw std::exception("Invalid iterator!");
+	}
+
+	Node* toRemove = pos.getCurrentNode();
+	TElem removedData = toRemove->data;
+
+	// update the iterator to point to the next node
+	pos.next();
+
+	// if the node to remove is the head of the list
+	if (toRemove == head) {
+		head = head->next;
+		delete toRemove;
+		sizeOfList--;
+		return removedData;
+	}
+
+	// if the node to remove is not the head of the list
+	Node* prev = head;
+	while (prev != nullptr && prev->next != toRemove) {
+		prev = prev->next;
+	}
+	if (prev != nullptr) {
+		prev->next = toRemove->next;
+		delete toRemove;
+		sizeOfList--;
+		return removedData;
+	}
+
+	// if the node to remove was not found in the list
+	throw std::exception("Node not found in list!");
+}
+We start by checking if the given iterator object pos is valid. If it is not valid, we throw an exception.
+
+Then, we get a pointer to the node to be removed using the getCurrentNode() method of the ListIterator class. We also save the data from the removed node in a variable called removedData.
+
+We update the iterator object pos to point to the next node in the list after the removed node using the next() method of the ListIterator class.
+
+Next, we check if the node to remove is the head of the list. If it is, we update the head pointer to point to the next node in the list and delete the node to remove. We also decrement the sizeOfList variable and return the removedData.
+
+If the node to remove is not the head of the list, we iterate through the list until we find the node that comes before the node to remove. Once we find it, we update its next pointer to skip over the node to remove, delete the node to remove, decrement the sizeOfList variable and return the removedData.
+
+If we reach the end of the list without finding the node to remove, we throw an exception.

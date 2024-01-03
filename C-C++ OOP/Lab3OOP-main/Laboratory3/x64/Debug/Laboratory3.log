@@ -1,0 +1,8 @@
+﻿  complex_number.cpp
+C:\Users\Alex\source\repos\laboratory3-AlexD2003-main\Laboratory3\complex_number.cpp(18,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
+C:\Users\Alex\source\repos\laboratory3-AlexD2003-main\Laboratory3\complex_number.cpp(79,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alex\source\repos\laboratory3-AlexD2003-main\Laboratory3\complex_number.cpp(107,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alex\source\repos\laboratory3-AlexD2003-main\Laboratory3\complex_number.cpp(107,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+  Generating Code...
+  Laboratory3.vcxproj -> C:\Users\Alex\source\repos\laboratory3-AlexD2003-main\x64\Debug\Laboratory3.exe

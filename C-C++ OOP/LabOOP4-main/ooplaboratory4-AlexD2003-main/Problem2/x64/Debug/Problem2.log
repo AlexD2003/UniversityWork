@@ -1,0 +1,17 @@
+﻿  BigInteger.cpp
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(29,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  bigint_test.cpp
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(29,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\bigint_test.cpp(58,15): error C2039: 'sgn': is not a member of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(6,7): message : see declaration of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\bigint_test.cpp(65,15): error C2039: 'sgn': is not a member of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(6,7): message : see declaration of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\bigint_test.cpp(68,15): error C2039: 'sgn': is not a member of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(6,7): message : see declaration of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\bigint_test.cpp(71,15): error C2039: 'sgn': is not a member of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(6,7): message : see declaration of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\bigint_test.cpp(74,15): error C2039: 'sgn': is not a member of 'BigInteger'
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(6,7): message : see declaration of 'BigInteger'
+  main.cpp
+C:\Users\Alex\source\repos\ooplaboratory4-AlexD2003-main\Problem2\BigInteger.h(29,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...

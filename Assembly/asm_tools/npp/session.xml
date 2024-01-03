@@ -1,0 +1,10 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="2">
+            <File firstVisibleLine="13" xOffset="0" scrollWidth="1521" startPos="827" endPos="827" selMode="0" lang="Assembly" encoding="-1" filename="C:\Users\Alex\Desktop\lab4.asm" backupFilePath="" originalFileLastModifTimestamp="1701521931" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="8" xOffset="0" scrollWidth="1521" startPos="670" endPos="670" selMode="0" lang="Assembly" encoding="-1" filename="C:\Users\Alex\Desktop\labMada.asm" backupFilePath="" originalFileLastModifTimestamp="1702537456" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="50331651" mapWrapIndentMode="-1" mapIsWrap="no" />
+            <File firstVisibleLine="4" xOffset="0" scrollWidth="1521" startPos="237" endPos="237" selMode="0" lang="Assembly" encoding="-1" filename="C:\Users\Alex\Desktop\labMada2.asm" backupFilePath="" originalFileLastModifTimestamp="1702539352" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="7536756" mapWrapIndentMode="-1" mapIsWrap="no" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>
