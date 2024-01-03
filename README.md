@@ -8,6 +8,9 @@
 ---
 ## Semester 3
 [Java Advanced Programming Methods](https://github.com/AlexD2003/UniversityWork/tree/main/Java%20Advanced%20Programming%20Methods)
+
 [Assembly](https://github.com/AlexD2003/UniversityWork/tree/main/Assembly)
+
 [PCK](https://github.com/AlexD2003/UniversityWork/tree/main/Public%20Key%20Cryptography)
+
 [Databases](https://github.com/AlexD2003/UniversityWork/tree/main/Databases)
